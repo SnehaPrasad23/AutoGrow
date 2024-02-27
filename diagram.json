@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "author": "Dhruv Sharma",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 48, "left": 110.44, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 142.7, "left": -211.4, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -97.3, "left": -182.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot3", "top": -97.3, "left": -67.4, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -66.9,
+      "left": 273,
+      "attrs": { "humidity": "35", "temperature": "29" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -118.8,
+      "left": 195.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": 304,
+      "left": 168.8,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot4", "top": 142.7, "left": -125, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot5", "top": 142.7, "left": -9.8, "attrs": {} },
+    {
+      "type": "wokwi-7segment",
+      "id": "sevseg1",
+      "top": 188.22,
+      "left": 346.72,
+      "attrs": { "digits": "4" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 367.2,
+      "left": -55.8,
+      "attrs": { "volume": "2.0" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v76.8", "h268.8", "v-76.8" ] ],
+    [ "pot2:GND", "esp:GND.1", "black", [ "h-67.2", "v316.8", "h307.2", "v-86.4" ] ],
+    [ "pot3:GND", "esp:GND.1", "black", [ "v316.8", "h124.8", "v-86.4" ] ],
+    [ "pot1:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "pot2:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "pot3:VCC", "esp:5V", "red", [ "v0" ] ],
+    [ "dht1:VCC", "esp:5V", "red", [ "v220.8", "h-172.95" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "dht1:SDA", "esp:19", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.2", "green", [ "v105.6", "h0.4" ] ],
+    [ "led1:A", "esp:23", "green", [ "h19.2", "v115.2", "h-28.8" ] ],
+    [ "pot3:SIG", "esp:34", "green", [ "v144", "h143.45" ] ],
+    [ "pot2:SIG", "esp:35", "green", [ "v153.6", "h258.65" ] ],
+    [ "pot4:GND", "esp:GND.1", "black", [ "v76.8", "h182.4", "v-86.4" ] ],
+    [ "pot5:GND", "esp:GND.1", "black", [ "v76.8", "h67.2", "v-86.4" ] ],
+    [ "pot4:VCC", "esp:5V", "red", [ "v38.4", "h191.05" ] ],
+    [ "pot5:VCC", "esp:5V", "red", [ "v38.4", "h75.85" ] ],
+    [ "pot1:SIG", "esp:32", "green", [ "v48", "h-58", "v-124.8" ] ],
+    [ "pot4:SIG", "esp:33", "green", [ "v38.4", "h172.4", "v-105.6" ] ],
+    [ "pot5:SIG", "esp:25", "green", [ "v38.4", "h57.2", "v-96" ] ],
+    [ "lcd1:GND", "esp:GND.1", "black", [ "h-86.4", "v-105.6" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h-48", "v163.4", "h480", "v-393.6" ] ],
+    [ "lcd1:SCL", "esp:22", "green", [ "h-28.8", "v173.1", "h470.4", "v-441.6" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-508.8", "v-508.7", "h451.05" ] ],
+    [ "sevseg1:E", "esp:27", "green", [ "v27.96", "h-326.39", "v-115.2" ] ],
+    [ "sevseg1:D", "esp:26", "green", [ "v27.96", "h-307.35" ] ],
+    [ "sevseg1:C", "esp:D0", "green", [ "v27.96", "h-201.6", "v-144" ] ],
+    [ "sevseg1:G", "esp:18", "green", [ "v27.96", "h-211.2", "v-134.4" ] ],
+    [ "sevseg1:DIG4", "esp:5", "green", [ "v27.96", "h-220.8", "v-124.8" ] ],
+    [ "sevseg1:CLN", "esp:RX", "green", [ "h0" ] ],
+    [ "sevseg1:B", "esp:4", "green", [ "v0" ] ],
+    [ "sevseg1:DIG3", "esp:2", "green", [ "h-182.4", "v19.2" ] ],
+    [ "sevseg1:DIG2", "esp:15", "green", [ "v-96", "h-230.4" ] ],
+    [ "sevseg1:F", "esp:13", "green", [ "v-67.2", "h-316.95" ] ],
+    [ "sevseg1:A", "esp:12", "green", [ "v0" ] ],
+    [ "sevseg1:DIG1", "esp:14", "green", [ "v0" ] ],
+    [ "sevseg1:DP", "esp:0", "green", [ "v27.96", "h134.4", "v-343.92", "h-355.2" ] ],
+    [ "bz1:2", "esp:23", "green", [ "v47.8", "h-99.5" ] ],
+    [ "bz1:1", "esp:GND.1", "black", [ "v77.8", "h-89.5" ] ]
+  ],
+  "dependencies": {}
+}

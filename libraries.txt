@@ -1,0 +1,14 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+# Automatically added based on includes:
+DHT sensor library
+
+Blynk
+DHT sensor library for ESPx
+ESP-Google-Sheet-Client
+LiquidCrystal I2C
+SevSeg
+Stepper
+NeuralNetwork
+TensorFlowLite_ESP32
